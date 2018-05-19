@@ -1,6 +1,6 @@
 'use strict';
 
-let List = require ('../lib.list.js');
+let List = require ('../lib/list.js');
 
 describe('List Modules', () => {
 
