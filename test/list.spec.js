@@ -7,7 +7,7 @@ describe('List Modules', () => {
   it('push(), returns the updated length of array', () => {
 
     let myList = new List();
-    myList.push("foo");
+    myList.push('foo');
 
     expect(myList.length).toBe(1);
 
