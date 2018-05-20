@@ -34,8 +34,34 @@ class List {
     return undefined;
   }
 
-}
+  map(func) {
 
-// this[++this.length] = item;
+    let mappedList = new List();
+
+    for(let i = 0; i < this.length; i++) {
+      mappedList[i] = func(this[i]);
+      mappedList.length++;
+    }
+    if(!func) {
+      return undefined;
+    }
+
+    return mappedList;
+  }
+  
+
+  // filter() {
+
+  // }
+
+
+  // reduce() {
+
+  // }
+
+
+
+
+}
 
 module.exports = List;

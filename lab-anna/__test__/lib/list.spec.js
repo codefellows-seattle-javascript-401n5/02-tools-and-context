@@ -50,7 +50,7 @@ describe('List Module', () => {
     })).toEqual(undefined);
   });
 
-  it('forEach() array should be unchanged', () => {
+  it('forEach() should apply the function and add to the list', () => {
 
     let myList = new List();
     let arr2 = new List;
@@ -64,6 +64,30 @@ describe('List Module', () => {
 
     expect(arr2[1]).toEqual('bee');
   });
+
+
+  it('map() function should apply a function to every element and return a new changed list', () => {
+
+    let myList = new List();
+
+    myList.push('1');
+    myList.push('2');
+    myList.push('3');
+    myList.push('4');
+
+    let input = myList.map(ele => ele * 2);
+
+    expect(input).toEqual({'0': 2, '1': 4, '2': 6, '3': 8, 'length': 4});
+  });
+
+
+  it('map() function should return undefined if the input is empty', () => {
+
+    let myList = new List();
+
+    expect(myList.map('')).toBeUndefined();
+  });
+
 
 
 
