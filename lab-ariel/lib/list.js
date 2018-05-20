@@ -21,6 +21,13 @@ class List {
     return this[lastIndex];
   }
 
+  forEach(func) {
+    let listLength = this.length;
+    for (let i = 0; i < listLength; i++) {
+      func(this[i]);
+    }
+  }
+
 //   toArray() {
 //     let array = [];
 //     for (let i = 0; i < array.length; i++) {

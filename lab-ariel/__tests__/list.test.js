@@ -41,4 +41,18 @@ describe('List Module', () => {
       
   });
 
+  it('forEach() takes a function as a parameter and applies it to each item in the List', () => {
+    let testList = new List(['Brian', 'Ariel']);
+    let expectedList = new List(['Hi Brian', 'Hi Ariel']);
+    let hiList = new List();
+    function sayHi(item) {
+      let say = `Hi ${item}`;
+      hiList.push(say);
+    }
+    testList.forEach(sayHi);
+
+    expect(hiList).toEqual(expectedList);
+      
+  });
+
 });
