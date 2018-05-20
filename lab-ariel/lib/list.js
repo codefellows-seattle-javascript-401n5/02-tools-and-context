@@ -18,7 +18,7 @@ class List {
     let lastIndex = (this.length -1);
     delete this[lastIndex];
     this.length--;
-    return this.length;
+    return this[lastIndex];
   }
 
 //   toArray() {
