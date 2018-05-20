@@ -27,11 +27,22 @@ class List{
     return undefined;
   }
 
-  // The map() method creates a new array with the results of calling a provided function on every element in the calling array.
   map(execute){
     let newArr = [];
     for(let i=0; i < this.length; i++){
       newArr[i] = execute(this[i]);
+    }
+    return newArr;
+  }
+
+  // The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+
+  filter(execute){
+    let newArr = [];
+    for(let i=0; i < this.length; i++){
+      if(execute(this[i]) === true){
+        newArr[i] = (this[i]);
+      }
     }
     return newArr;
   }

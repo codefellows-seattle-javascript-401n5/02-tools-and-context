@@ -82,9 +82,9 @@ describe('list module', () => {
       return element * 2;
     });
 
-    for(let i = 0; i < mapList.length; i++) {
-      expect(mapList[i]/2).toBe(myList[i]);
-    }
+
+    expect(mapList[1]/2).toBe(myList[1]);
+
   });
 
   it('map should return a new array with results of the function', () => {
@@ -98,6 +98,31 @@ describe('list module', () => {
     });
 
     expect(Array.isArray(mapList)).toBe(true);
+  });
+
+  // filter
+  it('filter should execute a function once for each element', () =>{
+    let myList = new List();
+    myList.push('FOOO');
+    myList.push('BAR');
+    myList.push('BAZZ');
+
+    let filterList = myList.filter(element => element.length > 3); 
+
+    expect(filterList[0]).toBe('FOOO');
+  });
+
+  it('filter should return an array with results of elements that pass function', () => {
+
+    let myList = new List();
+    myList.push('FOOO');
+    myList.push('BAR');
+    myList.push('BAZZ');
+
+    let filterList = myList.filter(element => element.length > 3); 
+
+    expect(Array.isArray(filterList)).toBe(true);
+
   });
 
   
