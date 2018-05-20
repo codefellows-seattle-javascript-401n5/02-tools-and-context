@@ -10,6 +10,7 @@ class List{
     return this.length;
   }
 
+
   pop(){
     if(!this.length){
       return undefined;
@@ -20,15 +21,13 @@ class List{
     return toRemove;
   }
 
-  // pop() {
-  //   let remove = this[this.length - 1];
-  //   this.length--;
-  //   if (this.length < 0) return undefined;
-  //   else {
-  //     delete this[this.length];
-  //   }
-  //   return remove;
-  // }
+  // forEach() method executes a provided function once for each array element. Return value is undefined.
+  forEach(execute){
+    for(let i=0; i < this.length; i++){
+      execute(this[i]);
+    } 
+    return undefined;
+  }
 }
 
 module.exports = List;

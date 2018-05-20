@@ -4,6 +4,7 @@ let List = require('../lib/list.js');
 let myList = new List();
 
 describe('list module', () => {
+  // push 
   it('push should return the updated length of the list', () =>{
 
     myList.push('FOO');
@@ -18,6 +19,7 @@ describe('list module', () => {
     expect(myList[myList.length -1]).toBe('BAZ');
   });
 
+  // pop 
   it('pop should return undefined if length is 0', () => {
     
     myList.length = 0;
@@ -41,4 +43,27 @@ describe('list module', () => {
 
     expect(myList.pop()).toBe('BAZ');
   });
+
+  // forEach 
+  it('forEach should return return undefined', () => {
+    myList.push('FOO');
+    myList.push('BAR');
+    myList.push('BAZ');
+
+    expect(myList.forEach(element =>{
+      return element;
+    })).toBeUndefined;
+
+  });
+
+  it('forEach should execute a function once for each element', () => {
+    let newArr = new List();
+    myList.push('FOO');
+    myList.push('BAR');
+    myList.forEach(element => {
+      newArr.push(element + ' has been reached');
+    });
+    expect(newArr[1]).toBe('BAR has been reached');
+  });
+
 });
