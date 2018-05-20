@@ -10,7 +10,6 @@ class List{
     return this.length;
   }
 
-
   pop(){
     if(!this.length){
       return undefined;
@@ -21,12 +20,20 @@ class List{
     return toRemove;
   }
 
-  // forEach() method executes a provided function once for each array element. Return value is undefined.
   forEach(execute){
     for(let i=0; i < this.length; i++){
       execute(this[i]);
     } 
     return undefined;
+  }
+
+  // The map() method creates a new array with the results of calling a provided function on every element in the calling array.
+  map(execute){
+    let newArr = [];
+    for(let i=0; i < this.length; i++){
+      newArr[i] = execute(this[i]);
+    }
+    return newArr;
   }
 }
 
