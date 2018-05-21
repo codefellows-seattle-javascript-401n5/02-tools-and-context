@@ -81,6 +81,21 @@ describe('List Module', () => {
   });
 
 
+  it('map() function should apply a function to every element and keep original array untouched', () => {
+
+    let myList = new List();
+
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+
+    myList.map(ele => ele * 2);
+
+    expect(myList[2]).toEqual(3);
+  });
+
+
   it('map() function should return undefined if the input is empty', () => {
 
     let myList = new List();
@@ -89,6 +104,42 @@ describe('List Module', () => {
   });
 
 
+  it('filter() should return a new list which passes all the tests the function performs on the list', () => {
+
+    let myList = new List();
+
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+
+    let input = myList.filter(ele => ele % 2);
+
+    expect(input).toEqual({'0': 1, '2': 3, 'length': 2});
+  });
+
+
+  it('filter() function should keep original array untouched', () => {
+
+    let myList = new List();
+
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+
+    myList.map(ele => ele % 2);
+
+    expect(myList).toEqual({'0': 1, '1':2, '2': 3, '3': 4, 'length': 4});
+  });
+
+
+  it('filter() function should return undefined if the input is empty', () => {
+
+    let myList = new List();
+
+    expect(myList.filter('')).toBeUndefined();
+  });
 
 
 });

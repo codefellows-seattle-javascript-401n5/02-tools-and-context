@@ -34,6 +34,7 @@ class List {
     return undefined;
   }
 
+
   map(func) {
 
     let mappedList = new List();
@@ -48,16 +49,43 @@ class List {
 
     return mappedList;
   }
-  
 
-  // filter() {
 
-  // }
+  filter(func) {
+    let filteredList = new List();
+
+    for(let i = 0; i < this.length; i++) {
+      if (func(this[i], i, this)) {
+        filteredList[i]  = this[i];
+        filteredList.length++;
+      }
+    }
+    if(!func) {
+      return undefined;
+    }
+
+    return filteredList;
+  }
 
 
   // reduce() {
 
   // }
+
+
+
+  toArray() {
+    let array = [];
+
+    for(let i = 0; i < this.length; i++) {
+
+      array[i] = this[i];
+
+    }
+
+    return array;
+
+  }
 
 
 
