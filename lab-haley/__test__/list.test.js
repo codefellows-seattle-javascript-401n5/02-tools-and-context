@@ -125,5 +125,18 @@ describe('list module', () => {
 
   });
 
-  
+  // reduce
+  it('reduce should execute a function on an accumulator and each element in the array and return a value' , () => {
+    let myList = new List();
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+    var result = myList.reduce(reducer, 0);
+    expect(result).toBe(6);
+
+  });
+
 });
