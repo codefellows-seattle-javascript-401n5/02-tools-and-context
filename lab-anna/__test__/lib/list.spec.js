@@ -128,7 +128,7 @@ describe('List Module', () => {
     myList.push(3);
     myList.push(4);
 
-    myList.map(ele => ele % 2 === 0);
+    myList.filter(ele => ele % 2 === 0);
 
     expect(myList).toEqual({'0': 1, '1':2, '2': 3, '3': 4, 'length': 4});
   });
