@@ -122,7 +122,49 @@ describe('List Modules', () => {
    
     expect(myList.filter('')).toBeUndefined();
   });
-  
+  it('reduce() should reduce the array to a single value and start index at 0', () => {
+    let myList = new List();
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+    
+
+    let input = myList.reduce((acc, curr) => acc + curr);
+
+    expect(input).toEqual(10);
+  });
+
+  it('reduce() should reduce the array to a single value and start at the value provided', () => {
+    let myList = new List();
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+    
+    let input = myList.reduce((acc, curr) => acc + curr,10);
+
+
+    expect(input).toEqual(20);
+  });
+
+
+  it('reduce() should reduce the array to a single value and should also work with a string', () => {
+    let myList = new List();
+    
+    myList.push('hello');
+    myList.push('world');
+    
+    let input = myList.reduce((acc, curr) => acc + ' ' + curr);
+
+    expect(input).toEqual('hello world');
+  });
+
+  it('reduce() returns undefined if empty', () => {
+    let myList = new List();
+   
+    expect(myList.reduce('')).toBeUndefined();
+  }); 
 });
 
 
