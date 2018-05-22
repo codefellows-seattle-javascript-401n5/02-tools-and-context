@@ -30,18 +30,24 @@ class List {
 
   map(func) {
     let listLength = this.length;
+    let resultList = new List();
     for (let i = 0; i < listLength; i++) {
-      func(this[i]);
+      resultList.push(func(this[i]));
     }
+    return resultList;
   }
 
-//   toArray() {
-//     let array = [];
-//     for (let i = 0; i < array.length; i++) {
-//       array[i] = this[i];
-//     }
-//     return array;  
-//   }
+  filter(func) {
+    let listLength = this.length;
+    let resultList = new List();
+    const cond = true;
+    for (let i = 0; i < listLength; i++) {
+      if (func(this[i]) == cond) {
+        resultList.push(this[i]);
+      }
+    }
+    return resultList;
+  }
 }
 
 module.exports = List;

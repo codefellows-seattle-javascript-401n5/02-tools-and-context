@@ -56,14 +56,27 @@ describe('List Module', () => {
   it('map() takes a function as a parameter and applies it to each item in the List, putting that item in a new list', () => {
     let testList = new List(['wow', 'cool']);
     let expectedList = new List(['wow!', 'cool!']);
-    let exclaimList = new List();
     function exclaim(item) {
-      let exPoint = `${item}!`;
-      exclaimList.push(exPoint);
+      return `${item}!`;
     }
-    testList.map(exclaim);
 
-    expect(exclaimList).toEqual(expectedList);
+    expect(testList.map(exclaim)).toEqual(expectedList);
+      
+  });
+
+  it('filter() creates a new list with all items that past the test implemented by the function it takes', () => {
+    let testList = new List([3, 237, 25, 8]);
+    let expectedList = new List([237, 25]);
+    function big(item) {
+      if (item > 10) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    expect(testList.filter(big)).toEqual(expectedList);
       
   });
 
