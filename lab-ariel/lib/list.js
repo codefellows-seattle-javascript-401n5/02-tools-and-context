@@ -23,30 +23,58 @@ class List {
 
   forEach(func) {
     let listLength = this.length;
-    for (let i = 0; i < listLength; i++) {
-      this[i] = func(this[i]);
+    if (typeof func !== 'function') {
+      return null;
+    }
+    else {
+      for (let i = 0; i < listLength; i++) {
+        this[i] = func(this[i]);
+      }
     }
   }
 
   map(func) {
     let listLength = this.length;
     let resultList = new List();
-    for (let i = 0; i < listLength; i++) {
-      resultList.push(func(this[i]));
+    if (typeof func !== 'function') {
+      return null;
     }
-    return resultList;
+    else {
+      for (let i = 0; i < listLength; i++) {
+        resultList.push(func(this[i]));
+      }
+      return resultList;
+    }
   }
 
   filter(func) {
     let listLength = this.length;
     let resultList = new List();
-    const cond = true;
-    for (let i = 0; i < listLength; i++) {
-      if (func(this[i]) == cond) {
-        resultList.push(this[i]);
-      }
+    if (typeof func !== 'function') {
+      return null;
     }
-    return resultList;
+    else {
+      for (let i = 0; i < listLength; i++) {
+        if (func(this[i]) == true) {
+          resultList.push(this[i]);
+        }
+      }
+      return resultList;
+    }
+  }
+
+  reduce(func) {
+    let listLength = this.length;
+    let acc = 0;
+    if (typeof func !== 'function') {
+      return null;
+    }
+    else {
+      for (let i = 0; i < listLength; i++) {
+        acc = func(acc, this[i]);
+      }
+      return acc;
+    }
   }
 }
 

@@ -41,6 +41,12 @@ describe('List Module', () => {
       
   });
 
+  it('forEach() returns null if it is passed something other than a function', () => {
+    let testList = new List([1,2,3]);
+    expect(testList.forEach('banana')).toEqual(null);
+      
+  });
+
   it('forEach() takes a function as a parameter and applies it to each item in the List', () => {
     let testList = new List(['Brian', 'Ariel']);
     let expectedList = new List(['Hi Brian', 'Hi Ariel']);
@@ -50,6 +56,12 @@ describe('List Module', () => {
     testList.forEach(sayHi);
 
     expect(testList).toEqual(expectedList);
+      
+  });
+
+  it('map() returns null if it is passed something other than a function', () => {
+    let testList = new List([1,2,3]);
+    expect(testList.map(5)).toEqual(null);
       
   });
 
@@ -64,7 +76,13 @@ describe('List Module', () => {
       
   });
 
-  it('filter() creates a new list with all items that past the test implemented by the function it takes', () => {
+  it('filter() returns null if it is passed something other than a function', () => {
+    let testList = new List([1,2,3]);
+    expect(testList.filter('dog')).toEqual(null);
+      
+  });
+
+  it('filter() creates a new list with all items that pass the test implemented by the function it takes', () => {
     let testList = new List([3, 237, 25, 8]);
     let expectedList = new List([237, 25]);
     function big(item) {
@@ -77,6 +95,32 @@ describe('List Module', () => {
     }
 
     expect(testList.filter(big)).toEqual(expectedList);
+      
+  });
+
+  it('reduce() returns null if it is passed something other than a function', () => {
+    let testList = new List([1,2,3]);
+    expect(testList.reduce(false)).toEqual(null);
+      
+  });
+
+  it('reduce() applies a function to each item in the list and an accumulator, returning a single value', () => {
+    let testList = new List([3, 237, 25, 8]);
+    function add(a, b) {
+      return a + b;
+    }
+
+    expect(testList.reduce(add)).toEqual(273);
+      
+  });
+
+  it('reduce() applies a function to each item in the list and an accumulator, returning a single value', () => {
+    let testList = new List([3, 237, 25, 8]);
+    function add(a, b) {
+      return a - b;
+    }
+
+    expect(testList.reduce(add)).toEqual(-273);
       
   });
 
