@@ -15,7 +15,7 @@ class List {
       }
     forEach(func) {
       for(let i=0; i < this.length; i ++){
-        func(this[i]);
+        gitfunc(this[i]);
         }
         return undefined;
       }
