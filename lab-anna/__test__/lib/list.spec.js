@@ -157,7 +157,7 @@ describe('List Module', () => {
   });
 
 
-  it('reduce() should apply a function to each element in the list and reduce it to a single value, and start at the index provided', () => {
+  it('reduce() should apply a function to each element in the list and reduce it to a single value, and start with the value provided', () => {
 
     let myList = new List();
 
@@ -172,7 +172,7 @@ describe('List Module', () => {
   });
 
 
-  it('reduce() should apply a function to each element in the list including and reduce it to a single value', () => {
+  it('reduce() should apply a function to each element in the list including and reduce it, it should work on strings too', () => {
 
     let myList = new List();
 
