@@ -60,7 +60,7 @@ describe('List Module', () => {
     expect(results).toBe(10);
   });
 
-  xit('forEach() method executes a provided function once for each array element.', () => {
+  it('forEach() method executes a provided function once for each array element.', () => {
     let myArray = [1, 2, 3, 4];
 
     let newArray = myArray.forEach(function(element) {
@@ -68,7 +68,7 @@ describe('List Module', () => {
     });
     console.log(newArray);
 
-    expect(newArray).toBe(1, 2, 3, 4);
+    expect(newArray).toBe(undefined);
   });
 
   it('map() method creates a new array with the results of calling a provided function on every element in the calling array.', () => {
