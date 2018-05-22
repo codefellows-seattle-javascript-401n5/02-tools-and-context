@@ -113,9 +113,9 @@ describe('List Module', () => {
     myList.push(3);
     myList.push(4);
 
-    let input = myList.filter(ele => ele % 2);
+    let input = myList.filter(ele => ele % 2 === 0);
 
-    expect(input).toEqual({'0': 1, '2': 3, 'length': 2});
+    expect(input).toEqual({'0': 2, '1': 4, 'length': 2});
   });
 
 
@@ -141,6 +141,56 @@ describe('List Module', () => {
     expect(myList.filter('')).toBeUndefined();
   });
 
+
+  it('reduce() should apply a function to each element in the list and reduce it to a single value, and start at index 0', () => {
+
+    let myList = new List();
+
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+
+    let input = myList.reduce((acc, curr) => acc + curr);
+
+    expect(input).toEqual(10);
+  });
+
+
+  it('reduce() should apply a function to each element in the list and reduce it to a single value, and start at the index provided', () => {
+
+    let myList = new List();
+
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+
+    let input = myList.reduce((acc, curr) => acc + curr, 10);
+
+    expect(input).toEqual(20);
+  });
+
+
+  it('reduce() should apply a function to each element in the list including and reduce it to a single value', () => {
+
+    let myList = new List();
+
+    myList.push('hello');
+    myList.push('world');
+
+    let input = myList.reduce((acc, curr) => acc + ' ' + curr);
+
+    expect(input).toEqual('hello world');
+  });
+
+
+  it('reduce() function should return undefined if the input is empty', () => {
+
+    let myList = new List();
+
+    expect(myList.reduce('')).toBeUndefined();
+  });
 
 });
 
