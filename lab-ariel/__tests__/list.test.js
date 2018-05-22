@@ -44,14 +44,26 @@ describe('List Module', () => {
   it('forEach() takes a function as a parameter and applies it to each item in the List', () => {
     let testList = new List(['Brian', 'Ariel']);
     let expectedList = new List(['Hi Brian', 'Hi Ariel']);
-    let hiList = new List();
     function sayHi(item) {
-      let say = `Hi ${item}`;
-      hiList.push(say);
+      return `Hi ${item}`;
     }
     testList.forEach(sayHi);
 
-    expect(hiList).toEqual(expectedList);
+    expect(testList).toEqual(expectedList);
+      
+  });
+
+  it('map() takes a function as a parameter and applies it to each item in the List, putting that item in a new list', () => {
+    let testList = new List(['wow', 'cool']);
+    let expectedList = new List(['wow!', 'cool!']);
+    let exclaimList = new List();
+    function exclaim(item) {
+      let exPoint = `${item}!`;
+      exclaimList.push(exPoint);
+    }
+    testList.map(exclaim);
+
+    expect(exclaimList).toEqual(expectedList);
       
   });
 

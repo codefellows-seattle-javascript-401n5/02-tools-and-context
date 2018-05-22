@@ -24,6 +24,13 @@ class List {
   forEach(func) {
     let listLength = this.length;
     for (let i = 0; i < listLength; i++) {
+      this[i] = func(this[i]);
+    }
+  }
+
+  map(func) {
+    let listLength = this.length;
+    for (let i = 0; i < listLength; i++) {
       func(this[i]);
     }
   }
