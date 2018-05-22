@@ -57,5 +57,5 @@ describe('List Module', () => {
 
 });
 
-'use strict';
+
 

@@ -13,35 +13,28 @@ class List {
       delete this[this.length];
       return this;
       }
+   
     forEach(func) {
-      for(let i=0; i < this.length; i ++){
-        gitfunc(this[i]);
+        for(let i = 0; i < this.length; i++) {
+          func(this[i]);
         }
         return undefined;
       }
     }
 
-    
-module.exports =List;
+    // toArray() {
 
-
-
-
-  toArray() {
-
-      let array = [];
+    //   let array = [];
 
        //start at zero, end at length
 
-      for (let i = 0; i < this.length; i++) {
+    //   for (let i = 0; i < this.length; i++) {
 
-          array[i] = this[i];
-      }
+    //       array[i] = this[i];
+    //   }
 
-      return array;
+//       return array;
 
-
-
-  }
+    module.exports =List;
 
 
