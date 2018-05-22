@@ -1,47 +1,47 @@
-"use strict";
+'use strict';
 
-let List = require("../lib/list");
+let List = require('../lib/list');
 
-describe("List Module", () => {
-  it("push() returns the length of the altered list", () => {
+describe('List Module', () => {
+  it('push() returns the length of the altered list', () => {
     let myList = new List();
-    myList.push("sushi");
+    myList.push('sushi');
 
     expect(myList.length).toBe(1);
   });
 
-  it("push() adds to end of list", () => {
+  it('push() adds to end of list', () => {
     let myList = new List();
-    myList.push("sushi");
+    myList.push('sushi');
 
-    expect(myList[0]).toBe("sushi");
+    expect(myList[0]).toBe('sushi');
   });
 
-  it("push() adds to end of list", () => {
+  it('push() adds to end of list', () => {
     let myList = new List();
-    myList.push("sushi");
-    myList.push("apple");
+    myList.push('sushi');
+    myList.push('apple');
 
-    expect(myList[1]).toBe("apple");
+    expect(myList[1]).toBe('apple');
   });
 
-  it("pops() removes an element from the list", () => {
+  it('pops() removes an element from the list', () => {
     let myList = new List();
-    myList.push("sushi");
+    myList.push('sushi');
     myList.pop();
 
     expect(myList.length).toBe(0);
   });
 
-  it("filter() returns a new array with the elements that have passed requirements", () => {
-    let myList = ["sushi", "pizza", "length", "basketball"];
+  it('filter() returns a new array with the elements that have passed requirements', () => {
+    let myList = ['sushi', 'pizza', 'length', 'basketball'];
     let newList = myList.filter(word => word.length > 5);
     console.log(newList);
 
     expect(newList.length).toBe(2);
   });
 
-  it("reduce() runs a function against an accumulator to return a single value", () => {
+  it('reduce() runs a function against an accumulator to return a single value', () => {
     // let myList = new List();
 
     // myList.push(1);
@@ -60,7 +60,7 @@ describe("List Module", () => {
     expect(results).toBe(10);
   });
 
-  xit("forEach() method executes a provided function once for each array element.", () => {
+  xit('forEach() method executes a provided function once for each array element.', () => {
     let myArray = [1, 2, 3, 4];
 
     let newArray = myArray.forEach(function(element) {
@@ -71,7 +71,7 @@ describe("List Module", () => {
     expect(newArray).toBe(1, 2, 3, 4);
   });
 
-  it("map() method creates a new array with the results of calling a provided function on every element in the calling array.", () => {
+  it('map() method creates a new array with the results of calling a provided function on every element in the calling array.', () => {
     let myArray = [1];
 
     let newArray = myArray.map(x => x * 23);
