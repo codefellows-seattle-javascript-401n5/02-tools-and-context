@@ -15,7 +15,6 @@ describe('List Modules', () => {
   it('push(), adds an element to the list', () => {
     let myList = new List();
     myList.push('one');
-    // myList.push('two');
     
     expect(myList[myList.length - 1]).toEqual('one');
     
@@ -32,7 +31,6 @@ describe('List Modules', () => {
     
   });
 
-
   it('pop() returns the item that was popped off', () => {
     let myList = new List();
     myList.push('one');
@@ -48,13 +46,14 @@ describe('List Modules', () => {
     let myList = new List();
     myList.push('one');
     myList.push('two');
+
     expect(myList.forEach(element =>{
       return element;
-    })).toEqual(undefined);//?
+    })).toEqual(undefined);
     
   });
 
-  it('forEach() should apply function to each element', () => {
+  it('forEach() applies function to each element', () => {
     let myList = new List();
     let array2 = new List();
     myList.push('one');
@@ -62,11 +61,12 @@ describe('List Modules', () => {
     myList.forEach(element =>{
       array2.push(element+3);
     });
+    
     expect(array2[1]).toEqual('two3');
     
   });
 
-  it('map() should apply function to each element in the array, and return adultured new array', () => {
+  it('map() applies function to each element in the array, and returns new array', () => {
     let myList = new List();
     let newArr = new List();
     myList.push('one');
@@ -74,11 +74,12 @@ describe('List Modules', () => {
     myList.map(element =>{
       newArr.push(element+3);
     });
+
     expect(newArr[1]).toEqual('two3');
 
   });
 
-  it('map() should apply function to each element in the array, and return unadultured old array', () => {
+  it('map() applies function to each element in the array, and returns clean old array', () => {
     let myList = new List();
     let newArr = new List();
     myList.push('one');
@@ -86,10 +87,42 @@ describe('List Modules', () => {
     myList.map(element =>{
       newArr.push(element+3);
     });
+
     expect(myList[1]).toEqual('two');
 
   });
+  it('filter() returns a new list', () => {
+    let myList = new List();
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+    
 
+    let input = myList.filter(element => element % 2 === 0);
+
+    expect(input).toEqual({'0': 2, '1': 4, 'length': 2});
+    
+  });
+
+  it('filter() keep the original array', () => {
+    let myList = new List();
+    myList.push(1);
+    myList.push(2);
+    myList.push(3);
+    myList.push(4);
+    myList.filter(element => element % 2 === 0);
+
+
+    expect(myList).toEqual({'0': 1, '1': 2, '2': 3, '3': 4, 'length': 4});
+  });
+
+  it('filter() returns undefined if empty', () => {
+    let myList = new List();
+   
+    expect(myList.filter('')).toBeUndefined();
+  });
+  
 });
 
 
