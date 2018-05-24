@@ -1,49 +1,28 @@
-![cf](https://i.imgur.com/7v5ASc8.png) 02: Tools and Context
-======
-
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
-* Open a pull request to this repository
-* Submit on canvas a question and observation, how long you spent, and a link to your pull request
-
-## Configuration
-Configure the root of your repository with the following files and directories. Thoughtfully name and organize any additional configuration or module files.
-* **README.md** - contains documentation
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file
-* **.eslintrc.json** - contains the course linter configuratoin
-* **.eslintignore** - contains the course linter ignore configuration
-* **.travis.yml** - travis-ci configuration file
-* **package.json** - contains npm package config
-  * create a `lint` script for running eslint
-  * create a `test` script for running tests
-* **lib/** - contains module definitions
-* **\_\_test\_\_/** - contains unit tests
-
-## Feature Tasks
-
-#### List Module
-  * implement a List constructor using a constructor, factory, or class
-  * implement the length property
-  * implement `push()`, `pop()` methods on the List prototype
-  * implement `forEach()`, `map()`, `filter()`, and `reduce()` as pure methods on the List prototype
-  * Do not use any built-in array methods to do this
-  
-#### Stretch Goals
-  * implement `slice()`, and `splice()` as methods on the List prototype
-  * implement `shift()`, and `unshift()` as methods on the List prototype
-  * These mutating methods will require you to re-index the list!
-
-## Testing
-Create a NodeJS module in the \_\_test\_\_/ directory named `list.test.js` that asserts the correctness of the list module.
-
-Use the `describe` and `it` (or `test`) methods to define descriptive tests and increase readablity
-Each `it` callback should aim to test a small, well defined, feature of a function - this may include:
-  * tests that ensure the list module functions correctly with error-check parameters
-  * tests that the correct errors are thrown with invalid arguments exist
-  * tests to ensure that the list module functions return the correct results when invoked with valid arguments
-
 ##  Documentation
-Include your travis badge at the top of your `README.md` file
-In your `README.md`, describe the exported values of each module you have defined. Every function description should include it's airty (expected number of parameters), the expected data for each parameter (data-type and limitations), and it's behavior (for both valid and invalid use). Feel free to add any additional information in your `README.md` that you would like.
+[![Build Status](https://travis-ci.com/Bolstad09/02-tools-and-context.svg?branch=brittany)](https://travis-ci.com/Bolstad09/02-tools-and-context)
+^^Travis build badge
+
+##Code Assignment Overview:
+
+## Describe the exported values of each module you have defined:
+The List module is being exported to be available to list.test.js. The methods in that module are:
+
+**push**:
+_push_ is an airity of one pure function exported as a method of List. It takes a new element(s) and "pushes" it onto an existing array, returning the array + the the element(s).
+
+**pop**:
+_pop_ is an airity of one pure function exported as a method of List. It will remove the last element in the input array and return the array without that element.
+
+**forEach**:
+_forEach_ is an airity of two pure function exported as a method of List. It takes in a function and an element. It will iterate through an array and for each element it will execute the function passed to it. Strangely, forEach always _returns_ 
+
+**undefined**, but other tests can be done to show that the function has been executed on each element of the array.
+
+**map**:
+_map_ is an airity of two pure function exported as a method of List. It iterates through an existing array, applies a function
+to each element of that array and assembles a new array of the elements of the old array after the function has been applied to each element. _Map_ returns the new array and does not tamper with the integrity of the input array.
+
+**filter**:
+_filter_ is an airity of one pure function exported as a method of List. It takes in a function that iterates through an array and applies that function to each element, and returns the elements that pass the function that was passed.
+
+
