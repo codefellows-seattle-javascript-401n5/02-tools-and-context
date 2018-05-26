@@ -18,8 +18,8 @@ class List {
 
   filter() {
     return this.length;
-    return newList;
-    console.log(newList);
+    // return newList;
+    // console.log(newList);
   }
 
   reduce(item) {
