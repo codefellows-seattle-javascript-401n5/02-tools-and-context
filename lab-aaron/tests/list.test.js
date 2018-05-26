@@ -41,6 +41,13 @@ describe('List Module', () => {
     expect(newList.length).toBe(2);
   });
 
+  it('filter() returns a new array with the elements that have passed requirements', () => {
+    let myList = ['sushi', 'pizza', 'length', 'basketball'];
+    let newList = myList.filter(word => word.length > 5);
+
+    expect(newList[0]).toBe('length');
+  });
+
   it('reduce() runs a function against an accumulator to return a single value', () => {
     // let myList = new List();
 

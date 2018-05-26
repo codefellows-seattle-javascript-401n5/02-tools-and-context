@@ -11,12 +11,12 @@ class List {
     return this.length;
   }
 
-  pop(item) {
+  pop() {
     this.length--;
     return this.length;
   }
 
-  filter(item) {
+  filter() {
     return this.length;
     return newList;
     console.log(newList);
